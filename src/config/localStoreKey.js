@@ -1,0 +1,2 @@
+export const CITYNAME = 'USER_CURRENT_CITY_NAME'
+export const USERNAME = 'USER_CURRENT_USER_NAME'
