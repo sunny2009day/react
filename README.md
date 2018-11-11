@@ -1,36 +1,46 @@
 # React-Demo
-基于Reactjs && Node 通讯的简单演示
+### 基于Reactjs && Node 通讯的简单演示
 Reactjs && ES6 && webpack构建移动端京东首页
 基于文件系统的Node.js服务端
 Mou icon
 
 安装与运行程序
-克隆项目
+#### 克隆项目
+```
+$ git clone https://github.com/CanFoo/react.git
+```
 
-___ $ git clone https://github.com/CanFoo/react.git
-分别进入react目录和server目录下安装依赖包
+#### 分别进入react目录和server目录下安装依赖包
 
-___  $ npm install
-在server目录下启动后台服务
+```
+$ npm install
+```
+#### 在server目录下启动后台服务
 
-___ $ npm run start
-在react目录下启动webpack服务
+``` 
+$ npm run start
+```
+#### 在react目录下启动webpack服务
 
-___ $ npm run dev 
-发布项目文件命令
+``` 
+$ npm run dev
+```
+#### 发布项目文件命令
+```
+$ npm run build___ 
+```
 
-___ $ npm run build
 执行完npm run dev命令后，打开浏览器 http://localhost:8080/运行项目，后台服务端口为 3000
 
  
-##在create-react-app生成的项目基础上更改，
+## 在create-react-app生成的项目基础上更改，
 使用koa2模拟的后台数据
 界面react16+react-router4+less
 基于已有项目修改的，
 
 npm run mock，启动koa，监听3001，端口
 npm start 启动开发环境
-##在webpackDevServer中配置代理 
+## 在webpackDevServer中配置代理 
 
 ```
   const proxyConfig = {
