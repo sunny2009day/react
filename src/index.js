@@ -20,7 +20,6 @@ const store = configureStore()
 
 // Create a browser history
  
-console.log('入口')
  
 render(
     <Provider store={store}>

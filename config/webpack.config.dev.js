@@ -36,11 +36,7 @@ const publicUrl = publicPath.slice(0, -1);
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl);
 
-// Assert this just to be safe.
-// Development builds of React are slow and not intended for production.
-if (env.stringified['process.env'].NODE_ENV !== '"production"') {
-  throw new Error('Production builds must have NODE_ENV=production.');
-}
+ 
 
 // style files regexes
 const cssRegex = /\.css$/;
@@ -104,7 +100,7 @@ function resolve (dir) {
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   // Don't attempt to continue if there are any errors.
   bail: true,
   // We generate sourcemaps in production. This is slow but gives good results.
@@ -118,7 +114,7 @@ module.exports = {
     // Generated JS file names (with nested folders).
     // There will be one main bundle, and one file per asynchronous chunk.
     // We don't currently advertise code splitting but Webpack supports it.
-    filename: 'static/js/[name].[chunkhash:8].js',
+   filename: 'static/js/bundle.js',
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath: publicPath,
@@ -310,8 +306,7 @@ module.exports = {
               ],
               cacheDirectory: true,
               // Save disk space when time isn't as important
-              cacheCompression: true,
-              compact: true,
+              cacheCompression: false
             },
           },
           // Process any JS outside of the app with Babel.
@@ -332,7 +327,7 @@ module.exports = {
               ],
               cacheDirectory: true,
               // Save disk space when time isn't as important
-              cacheCompression: true,
+              cacheCompression: false,
               
               // If an error happens in a package, it's possible to be
               // because it was compiled. Thus, we don't want the browser
@@ -351,7 +346,7 @@ module.exports = {
             exclude: cssModuleRegex,
             loader: getStyleLoaders({
               importLoaders: 1,
-              sourceMap: shouldUseSourceMap,
+  
             }),
             // Don't consider CSS imports dead code even if the
             // containing package claims to have no side effects.
@@ -382,7 +377,7 @@ module.exports = {
             test: cssModuleRegex,
             loader: getStyleLoaders({
               importLoaders: 1,
-              sourceMap: shouldUseSourceMap,
+    
               modules: true,
               getLocalIdent: getCSSModuleLocalIdent,
             }),
@@ -398,7 +393,7 @@ module.exports = {
             loader: getStyleLoaders(
               {
                 importLoaders: 2,
-                sourceMap: shouldUseSourceMap,
+      
               },
               'sass-loader'
             ),
@@ -415,7 +410,7 @@ module.exports = {
             loader: getStyleLoaders(
               {
                 importLoaders: 2,
-                sourceMap: shouldUseSourceMap,
+                
                 modules: true,
                 getLocalIdent: getCSSModuleLocalIdent,
               },
@@ -433,6 +428,7 @@ module.exports = {
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
             exclude: [/\.(js|mjs|jsx)$/, /\.html$/, /\.json$/],
+            loader: require.resolve('file-loader'),
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
             },
@@ -449,18 +445,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true,
-      },
+ 
     }),
     // Inlines the webpack runtime script. This script is too small to warrant
     // a network request.

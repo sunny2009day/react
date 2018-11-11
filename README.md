@@ -1,8 +1,11 @@
 # React-Demo
 ### 基于Reactjs && Node 通讯的简单演示
-Reactjs && ES6 && webpack构建移动端京东首页
+Reactjs && ES6 && webpack构建移动端大众点评首页  
 基于文件系统的Node.js服务端
-Mou icon
+koa
+
+
+![index.png](/UE/index.png)  
 
 安装与运行程序
 #### 克隆项目
@@ -27,10 +30,10 @@ $ npm run dev
 ```
 #### 发布项目文件命令
 ```
-$ npm run build___ 
+$ npm run build 
 ```
 
-执行完npm run dev命令后，打开浏览器 http://localhost:8080/运行项目，后台服务端口为 3000
+执行完npm run dev命令后，打开浏览器 http://localhost:3000/运行项目，后台服务端口为 3001
 
  
 ## 在create-react-app生成的项目基础上更改，
