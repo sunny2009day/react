@@ -5,12 +5,12 @@ Reactjs && ES6 && webpack构建移动端大众点评首页
 koa
 
 
-![index.png](/UE/index.png)  
+![index.png](https://github.com/sunny2009day/react/blob/master/src/UE/index.png)  
 
 安装与运行程序
 #### 克隆项目
 ```
-$ git clone https://github.com/CanFoo/react.git
+$ git clone https://github.com/sunny2009day/react/
 ```
 
 #### 分别进入react目录和server目录下安装依赖包
