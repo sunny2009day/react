@@ -1,10 +1,10 @@
 # 订单评价的开发
 
-源码 https://github.com/wangfupeng1988/react-simple-o2o-demo/tree/stage8-order-comment
+ 
 
 ## 最终效果
 
-![](http://images2015.cnblogs.com/blog/138012/201701/138012-20170126173741831-976304841.png)
+ 
 
 ## 三个状态
 

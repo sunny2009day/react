@@ -4,7 +4,8 @@ import { Route, Switch } from 'react-router'
 import { Router } from 'react-router-dom'
 import App from '../containers'
 import Home from '../containers/Home'
-// import City from '../containers/City'
+
+// import Search from '../containers/Search'
 // import City from '../containers/City'
 
 import Login from '../containers/Login'

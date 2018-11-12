@@ -5,7 +5,7 @@ Reactjs && ES6 && webpack构建移动端大众点评首页
 koa
 
 
-![index.png](https://github.com/sunny2009day/react/blob/master/src/UE/index.png)  
+![index.png](https://raw.githubusercontent.com/sunny2009day/react/master/src/UE/index.png)  
 
 安装与运行程序
 #### 克隆项目
@@ -18,8 +18,13 @@ $ git clone https://github.com/sunny2009day/react/
 ```
 $ npm install
 ```
-#### 在server目录下启动后台服务
+#### 先启动koa模拟的后台数据服务,在mock目录
 
+```
+$npm run mock
+```
+
+#### 开发环境webpackDevServer，启动
 ``` 
 $ npm run start
 ```
@@ -58,5 +63,5 @@ npm start 启动开发环境
     }
     
 ```
-    代码中多有注释
+ 代码中多有注释
 
